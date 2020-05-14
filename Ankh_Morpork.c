@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int *Vimes[2];
+int Vimes[2] = {0,0};
 
 /**
  * main - entry for monty to be interpreted
