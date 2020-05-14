@@ -45,11 +45,11 @@ void scrub(char *CMTD[])
  * Return: 0 if push, 1 if not
  */
 
-int push_check(char *CMTD[], ln)
+int push_check(char *CMTD[], unsigned ln)
 {
-	i = 0;
+	int i = 0;
 
-	if (strcmp([0], "push") == 0)
+	if (strcmp(CMTD[0], "push") == 0)
 	{
 		if (CMTD[1][i] == '-')
 			i++;
@@ -57,7 +57,7 @@ int push_check(char *CMTD[], ln)
 		{
 			if (!isdigit(CMTD[1][i]))
 			{
-			fprintf(stderr, "L%d: usage: push integer\n", ln)
+			fprintf(stderr, "L%d: usage: push integer\n", ln);
 			Vimes[1] = 1;
 			return (1);
 			}
@@ -89,12 +89,12 @@ void lost_to_LSPACE(stack_t *stack)
 /**
  * kicked_out - Booted out of Library
  * @buff: str to free
- * @fd: file to close
+ * @fp: file to close
  * @stack: stack to free
  * Return N/A
  */
 
-void kicked_out(char *buff, FILE *fd, staack_t *stack)
+void kicked_out(char *buff, FILE *fp, stack_t *stack)
 {
 	if (Vimes[1] == 1)
 	{

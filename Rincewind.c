@@ -21,7 +21,7 @@ void _add(stack_t **stack, unsigned int ln)
 	{
 		The_Bursar = (*stack)->n + (*stack)->next->n;
 		*stack = accounts->next;
-		(*stack)->prev == NULL;
+	/*	(*stack)->prev == NULL; */
 		free(accounts);
 		accounts = NULL;
 		(*stack)->n = The_Bursar;
@@ -37,6 +37,6 @@ void _add(stack_t **stack, unsigned int ln)
 
 void _nop(stack_t **stack, unsigned int ln)
 {
-	void(stack);
-	void(ln);
+	stack = stack;
+	ln = ln;
 }

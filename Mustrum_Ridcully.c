@@ -11,7 +11,8 @@
 
 void _push(stack_t **stack, unsigned int ln)
 {
-	top_of_pile(stack, vimes[0]);
+	ln = ln; 
+	top_of_pile(stack, Vimes[0]);
 }
 
 /**
@@ -28,7 +29,7 @@ void _pall(stack_t **stack, unsigned int ln)
 	ln = ln;
 
 	if (press == NULL)
-		return (0);
+		return;
 
 	while (press != NULL)
 	{
@@ -64,7 +65,7 @@ void _pint(stack_t **stack, unsigned int ln)
 
 void _pop(stack_t **stack, unsigned int ln)
 {
-	stack_t *nobby = *stack
+	stack_t *nobby = *stack;
 
 	if (nobby == NULL)
 	{
@@ -97,7 +98,7 @@ void _swap(stack_t **stack, unsigned int ln)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", ln)
+		fprintf(stderr, "L%u: can't swap, stack too short\n", ln);
 		Vimes[1] = 1;
 	}
 	else

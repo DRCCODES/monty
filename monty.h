@@ -4,6 +4,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,10 +40,10 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Single Global Varaible */
 extern int Vimes[];
 
 /* Munstrum Ridcully: Archchancellor */
-
 void _push(stack_t **stack, unsigned int ln);
 void _pall(stack_t **stack, unsigned int ln);
 void _pint(stack_t **stack, unsigned int ln);
@@ -52,8 +57,12 @@ void _nop(stack_t **stack, unsigned int ln);
 /* The Librarian */
 int cutting_pies(char *buff, char *CMTD[]);
 void scrub(char *CMTD[]);
-int push_check(char *CMTD[], ln);
+int push_check(char *CMTD[], unsigned ln);
 void lost_to_LSPACE(stack_t *stack);
-void kicked_out(char *buff, FILE *fd, staack_t *stack);
+void kicked_out(char *buff, FILE *fp, stack_t *stack);
+
+/* Hex */
+void (*nab_op_spell(char *coin, unsigned int line_n))(stack_t **stack, unsigned int ln);
+int top_of_pile(stack_t **stack, int n);
 
 #endif

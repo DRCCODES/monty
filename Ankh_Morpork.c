@@ -1,46 +1,52 @@
 #include "monty.h"
 
+int *Vimes[2];
+
 /**
  * main - entry for monty to be interpreted
- * ac: argument count
- * av: arguments
+ * @ac: argument count
+ * @av: arguments
  *
  * Return: No idea
  */
 
 int main(int ac, char **av)
 {
-	FILE *ook
-	size_t *stack = NULL;
+	FILE *ook;
+	stack_t *stack = NULL;
 	unsigned int line_n = 1;
-	chr *buff = NULL;
+	char *buff = NULL;
 	size_t size;
-	void (*op)(stack_t **stack, unsigned int ln);
+	void (*spell)(stack_t **stack, unsigned int ln);
 	char *CMTD[2];
 	int no_seg;
 
 	if (ac != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n")
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	ook = fopen(av[1], "r")
+	ook = fopen(av[1], "r");
 	if (ook == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
 		exit(EXIT_FAILURE);
 	}
-	while(getline(&buff, &size, ook) != EOF)
+	while (getline(&buff, &size, ook) != EOF)
 	{
 	no_seg = cutting_pies(buff, CMTD);/*parse to tokens*/
-		/* see if for push*/
-		/*Error Check*/
-		/*grab OP Functions*/
-		/*Error Check*/
-		/*Run OP*/
-		/*Error Check*/
+	no_seg = no_seg;
+	push_check(CMTD, line_n);	/* see if for push*/
+	kicked_out(buff, ook, stack);	/*Error Check*/
+	spell = nab_op_spell(CMTD[0], line_n);	/*grab OP Functions*/
+	kicked_out(buff, ook, stack);	/*Error Check*/
+	spell(&stack, line_n);	/*Run OP*/
+	kicked_out(buff, ook, stack);	/*Error Check*/
+	line_n++;
+	scrub(CMTD);
 	}
-	/* Free Buff */
-	/*Close ook*/
-	/*free_all*/
+	free(buff);	/* Free Buff */
+	fclose(ook);	/*Close ook*/
+	lost_to_LSPACE(stack);	/*free_all*/
+	return (0);
 }
