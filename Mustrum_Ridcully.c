@@ -65,24 +65,28 @@ void _pint(stack_t **stack, unsigned int ln)
 
 void _pop(stack_t **stack, unsigned int ln)
 {
-	stack_t *nobby = *stack;
+	stack_t *nobby;
 
-	if (nobby == NULL)
+	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", ln);
 		Vimes[1] = 1;
+		return;
 	}
-	else if (nobby->next == NULL)
+	nobby = (*stack);
+	if (nobby->next == NULL)
 	{
-		*stack = nobby->next;
-		(*stack)->prev = NULL;
 		free(nobby);
+		(*stack) = NULL;
+		return;
 	}
 	else
 	{
-		nobby = nobby->next;
-		free(*stack);
-		*stack = nobby;
+		(*stack) = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(nobby);
+
+		return;
 	}
 }
 /**
@@ -100,6 +104,7 @@ void _swap(stack_t **stack, unsigned int ln)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", ln);
 		Vimes[1] = 1;
+		return;
 	}
 	else
 	{
