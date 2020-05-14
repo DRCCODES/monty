@@ -35,8 +35,7 @@ void _add(stack_t **stack, unsigned int ln)
  * Returns Lazy Wizards
  */
 
-void _nop(stack_t **stack, unsigned int ln)
+void _nop(stack_t **stack __attribute__((unused)),
+unsigned int ln __attribute__((unused)))
 {
-	stack = stack;
-	ln = ln;
 }
