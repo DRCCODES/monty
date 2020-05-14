@@ -20,10 +20,14 @@ void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln)
 		{"swap", _swap},
 		{"nop", _nop},
 		{"pint", _pint},
+		{"sub", _sub},
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod},
 		{NULL, NULL}
 		};
 
-	for (i = 0; i < 7; i++)
+	for (i = 0; i < 11; i++)
 	{
 		if (strcmp(coin, ants[i].opcode) == 0)
 			return (*(ants[i]).f);

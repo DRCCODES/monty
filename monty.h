@@ -39,6 +39,7 @@ typedef struct instruction_s
 extern int Vimes[];
 
 /* Munstrum Ridcully: Archchancellor */
+
 void _push(stack_t **stack, unsigned int ln);
 void _pall(stack_t **stack, unsigned int ln);
 void _pint(stack_t **stack, unsigned int ln);
@@ -61,5 +62,11 @@ void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln);
 int top_of_pile(stack_t **stack, int n);
 int empty_check(const char *buff);
 void check_ac(int ac);
+
+/* Ponder Stibbons */
+void _sub(stack_t **stack, unsigned int ln);
+void _div(stack_t **stack, unsigned int ln);
+void _mul(stack_t **stack, unsigned int ln);
+void _mod(stack_t **stack, unsigned int ln);
 
 #endif
