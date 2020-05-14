@@ -59,5 +59,6 @@ void kicked_out(char *buff, FILE *fp, stack_t *stack);
 /* Hex */
 void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln);
 int top_of_pile(stack_t **stack, int n);
+int empty_check(const char *buff);
 
 #endif

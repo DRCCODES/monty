@@ -78,11 +78,11 @@ void lost_to_LSPACE(stack_t *stack)
 {
 	stack_t *OOK;
 
-	while (stack->next)
+	while (stack != NULL)
 	{
-		OOK = stack->next;
-		free(stack);
-		stack = OOK;
+		OOK = stack;
+		stack = stack->next;
+		free(OOK);
 	}
 }
 

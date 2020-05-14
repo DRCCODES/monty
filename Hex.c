@@ -19,6 +19,7 @@ void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln)
 		{"add", _add},
 		{"swap", _swap},
 		{"nop", _nop},
+		{"pint", _pint},
 		{NULL, NULL}
 		};
 	
@@ -27,7 +28,7 @@ void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln)
 		if (strcmp(coin, ants[i].opcode) == 0)
 				return (*(ants[i]).f);
 	}
-	fprintf(stderr, "L%d: unknown instruction %s", n, coin);
+	fprintf(stderr, "L%d: unknown instruction %s\n", n, coin);
 	Vimes[1] = 1;
 	return (NULL);
 }
@@ -69,3 +70,21 @@ int top_of_pile(stack_t **stack, int n)
 	return (0);
 
 }
+
+/**
+ * empty_check - checks if empty line
+ * @buff: the line to check
+ * Return: 0 if populated 1  if empty
+ */
+
+int empty_check(const char *buff)
+{
+	while(*buff != '\0')
+	{
+		if(!isspace(*buff))
+			return (0);
+		buff++;
+	}
+	return (1);
+}
+

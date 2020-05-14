@@ -47,13 +47,18 @@ void _pall(stack_t **stack, unsigned int ln)
 
 void _pint(stack_t **stack, unsigned int ln)
 {
+	
+	stack_t *numh;
+
+	numh = *stack;
+
 	if (*stack == NULL)
 	{
 	fprintf(stderr, "L%u: can't pint, stack empty\n", ln);
 	Vimes[1] = 1;
+	return;
 	}
-	else
-		printf("%d\n", (*stack)->n);
+	printf("%d\n", numh->n);
 }
 
 /**
@@ -98,6 +103,7 @@ void _pop(stack_t **stack, unsigned int ln)
 
 void _swap(stack_t **stack, unsigned int ln)
 {
+	stack_t *wagon, *horse;
 	int sgtcolon;
 
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -108,9 +114,11 @@ void _swap(stack_t **stack, unsigned int ln)
 	}
 	else
 	{
-		sgtcolon = (*stack)->n;
-		(*stack)->n = (*stack)->next->n;
-		(*stack)->next->n = sgtcolon;
+		wagon = (*stack);
+		horse = wagon->next;
+		sgtcolon = wagon->n;
+		wagon->n = horse->n;
+		horse->n = sgtcolon;
 	}
 }
 

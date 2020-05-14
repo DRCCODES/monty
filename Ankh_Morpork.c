@@ -34,7 +34,9 @@ int main(int ac, char **av)
 	}
 	while (getline(&buff, &size, ook) != EOF)
 	{
-	no_seg = cutting_pies(buff, CMTD);/*parse to tokens*/
+	if (empty_check(buff))
+		continue;
+	no_seg = cutting_pies(buff, CMTD);/*parse to coins*/
 	no_seg = no_seg;
 	push_check(CMTD, line_n);	/* see if for push*/
 	kicked_out(buff, ook, stack);	/*Error Check*/
