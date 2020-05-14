@@ -17,6 +17,7 @@ int main(int ac, char **av)
 	size_t size;
 	void (*op)(stack_t **stack, unsigned int ln);
 	char *CMTD[2];
+	int no_seg;
 
 	if (ac != 2)
 	{
@@ -31,7 +32,7 @@ int main(int ac, char **av)
 	}
 	while(getline(&buff, &size, ook) != EOF)
 	{
-		/*parse to tokens*/
+	no_seg = cutting_pies(buff, CMTD);/*parse to tokens*/
 		/* see if for push*/
 		/*Error Check*/
 		/*grab OP Functions*/

@@ -49,4 +49,11 @@ void _swap(stack_t **stack, unsigned int ln);
 void _add(stack_t **stack, unsigned int ln);
 void _nop(stack_t **stack, unsigned int ln);
 
+/* The Librarian */
+int cutting_pies(char *buff, char *CMTD[]);
+void scrub(char *CMTD[]);
+int push_check(char *CMTD[], ln);
+void lost_to_LSPACE(stack_t *stack);
+void kicked_out(char *buff, FILE *fd, staack_t *stack);
+
 #endif
