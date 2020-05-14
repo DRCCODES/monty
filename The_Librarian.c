@@ -45,7 +45,7 @@ void scrub(char *CMTD[])
  * Return: 0 if push, 1 if not
  */
 
-int push_check(char *CMTD[], unsigned ln)
+int push_check(char *CMTD[], unsigned int ln)
 {
 	int i = 0;
 

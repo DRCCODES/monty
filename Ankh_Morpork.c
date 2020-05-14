@@ -21,11 +21,7 @@ int main(int ac, char **av)
 	char *CMTD[2];
 	int no_seg;
 
-	if (ac != 2)
-	{
-		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE);
-	}
+	check_ac(ac);
 	ook = fopen(av[1], "r");
 	if (ook == NULL)
 	{
@@ -35,7 +31,10 @@ int main(int ac, char **av)
 	while (getline(&buff, &size, ook) != EOF)
 	{
 	if (empty_check(buff))
-		continue;
+	{
+	line_n++;
+	continue;
+	}
 	no_seg = cutting_pies(buff, CMTD);/*parse to coins*/
 	no_seg = no_seg;
 	push_check(CMTD, line_n);	/* see if for push*/

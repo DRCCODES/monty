@@ -11,7 +11,7 @@
 
 void _push(stack_t **stack, unsigned int ln)
 {
-	ln = ln; 
+	ln = ln;
 	top_of_pile(stack, Vimes[0]);
 }
 
@@ -47,7 +47,7 @@ void _pall(stack_t **stack, unsigned int ln)
 
 void _pint(stack_t **stack, unsigned int ln)
 {
-	
+
 	stack_t *numh;
 
 	numh = *stack;

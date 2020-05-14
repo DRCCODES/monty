@@ -1,10 +1,10 @@
-push         1
+push  1
       push 2
 push 2
-
-dfdg
+push aaaaa
+push 33
 
 push 2345
-
+sdf
 
 pall

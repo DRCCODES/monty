@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * nab_op_spell - checks if str is op function
+ * nab_op - checks if str is op function
  * @coin: str passed through
- * @line_n: line Number
+ * @n: line Number
  * Return: Function or NULL
  */
 
@@ -22,13 +22,13 @@ void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln)
 		{"pint", _pint},
 		{NULL, NULL}
 		};
-	
-	for (i = 0; i < 7 ; i++)
+
+	for (i = 0; i < 7; i++)
 	{
 		if (strcmp(coin, ants[i].opcode) == 0)
-				return (*(ants[i]).f);
+			return (*(ants[i]).f);
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", n, coin);
+	fprintf(stderr, "L%d: unknown instruction %s\n", n++, coin);
 	Vimes[1] = 1;
 	return (NULL);
 }
@@ -44,12 +44,12 @@ void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln)
 int top_of_pile(stack_t **stack, int n)
 {
 	stack_t *record;
-	
+
 	record = malloc(sizeof(stack_t));
-	
+
 	if (record == NULL)
 	{
-		fprintf(stderr,"Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		Vimes[1] = 1;
 		return (1);
 	}
@@ -79,12 +79,26 @@ int top_of_pile(stack_t **stack, int n)
 
 int empty_check(const char *buff)
 {
-	while(*buff != '\0')
+	while (*buff != '\0')
 	{
-		if(!isspace(*buff))
+		if (!isspace(*buff))
 			return (0);
 		buff++;
 	}
 	return (1);
 }
 
+/**
+ *  check_ac - checks ac number
+ *  @ac: the arguments to be counted
+ *  Return: N/A
+ */
+
+void check_ac(int ac)
+{
+	if (ac != 2)
+	{
+	fprintf(stderr, "USAGE: monty file\n");
+	exit(EXIT_FAILURE);
+	}
+}
