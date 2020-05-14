@@ -52,12 +52,12 @@ void _nop(stack_t **stack, unsigned int ln);
 /* The Librarian */
 int cutting_pies(char *buff, char *CMTD[]);
 void scrub(char *CMTD[]);
-int push_check(char *CMTD[], unsigned ln);
+int push_check(char *CMTD[], unsigned int ln);
 void lost_to_LSPACE(stack_t *stack);
 void kicked_out(char *buff, FILE *fp, stack_t *stack);
 
 /* Hex */
-void (*nab_op_spell(char *coin, unsigned int line_n))(stack_t **stack, unsigned int ln);
+void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln);
 int top_of_pile(stack_t **stack, int n);
 
 #endif

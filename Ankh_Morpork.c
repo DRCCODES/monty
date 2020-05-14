@@ -38,7 +38,7 @@ int main(int ac, char **av)
 	no_seg = no_seg;
 	push_check(CMTD, line_n);	/* see if for push*/
 	kicked_out(buff, ook, stack);	/*Error Check*/
-	spell = nab_op_spell(CMTD[0], line_n);	/*grab OP Functions*/
+	spell = nab_op(CMTD[0], line_n);	/*grab OP Functions*/
 	kicked_out(buff, ook, stack);	/*Error Check*/
 	spell(&stack, line_n);	/*Run OP*/
 	kicked_out(buff, ook, stack);	/*Error Check*/

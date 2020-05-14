@@ -8,7 +8,7 @@
  */
 
 
-void (*nab_op_spell(char *coin, unsigned int line_n))(stack_t **stack, unsigned int ln)
+void (*nab_op(char *coin, unsigned int n))(stack_t **stack, unsigned int ln)
 {
 	int i;
 
@@ -27,7 +27,7 @@ void (*nab_op_spell(char *coin, unsigned int line_n))(stack_t **stack, unsigned 
 		if (strcmp(coin, ants[i].opcode) == 0)
 				return (*(ants[i]).f);
 	}
-	fprintf(stderr, "L%d: unknown instruction %s", line_n, coin);
+	fprintf(stderr, "L%d: unknown instruction %s", n, coin);
 	Vimes[1] = 1;
 	return (NULL);
 }
