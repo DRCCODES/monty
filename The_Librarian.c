@@ -34,7 +34,7 @@ void scrub(char *CMTD[])
 {
 	int i;
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; CMTD[i]; i++)
 		CMTD[i][0] = '\0';
 }
 

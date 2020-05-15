@@ -41,7 +41,7 @@ extern int Vimes[];
 /* Munstrum Ridcully: Archchancellor */
 
 void _push(stack_t **stack, unsigned int ln);
-void _pall(stack_t **stack, unsigned int ln);
+int _pallB(stack_t **stack);
 void _pint(stack_t **stack, unsigned int ln);
 void _pop(stack_t **stack, unsigned int ln);
 void _swap(stack_t **stack, unsigned int ln);
@@ -68,5 +68,6 @@ void _sub(stack_t **stack, unsigned int ln);
 void _div(stack_t **stack, unsigned int ln);
 void _mul(stack_t **stack, unsigned int ln);
 void _mod(stack_t **stack, unsigned int ln);
+void _pall(stack_t **stack, unsigned int ln);
 
 #endif

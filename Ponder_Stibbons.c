@@ -116,3 +116,25 @@ void _mod(stack_t **stack, unsigned int ln)
 		(*stack)->n = The_Bursar;
 	}
 }
+
+/**
+ * _pall - calls things to print all the stack
+ * @stack: the double linked list
+ * @ln: line number
+ * Return: N/A
+ */
+
+void _pall(stack_t **stack, unsigned int ln)
+{
+	int thing;
+
+	ln = ln;
+
+	thing = _pallB(stack);
+
+	if (thing == 1)
+	{
+		;
+	}
+}
+

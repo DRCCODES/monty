@@ -16,27 +16,28 @@ void _push(stack_t **stack, unsigned int ln)
 }
 
 /**
- * _pall - printall elemnts in stack
+ * _pallB - printall elemnts in stack
  * @stack: The double linked list
- * @ln: line number
- * Return N/A
+ * Return: 1 or 0
  */
 
-void _pall(stack_t **stack, unsigned int ln)
+int _pallB(stack_t **stack)
 {
-	stack_t *press = (*stack);
+	stack_t *press;
 
-	ln = ln;
+
+	press = (*stack);
 
 	if (press == NULL)
-		return;
-
+	{
+		return (1);
+	}
 	while (press != NULL)
 	{
 		printf("%d\n", press->n);
 		press = press->next;
 	}
-
+	return (0);
 }
 /**
  *  _pint - print head int
